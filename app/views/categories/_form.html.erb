@@ -12,12 +12,16 @@
         </div>
 
         <div class="form-group row justify-content-center">
-          <%= f.submit("Save", class: "btn btn-outline-light btn-lg") %>
+          <%= f.submit(class: "btn btn-outline-light btn-lg") %>
         </div>
       <% end %>
     </div>
     <div class="mb-3">
-      <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+      <% if @category.new_record? %>
+      <%= link_to '[ Cancel and return to categories listing ]', categories_path, class: "text-info" %>
+      <% else %>
+      <%= link_to '[ Cancel and return to category ]', category_path(@category), class: "text-info" %>
+      <% end %>
     </div>
   </div>
 </div>
